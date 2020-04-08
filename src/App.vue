@@ -2,7 +2,7 @@
   <div id="app">
     <div id="nav">
       <router-link to="/">Modal</router-link> |
-      <router-link to="/about">About</router-link>
+      <router-link to="/list">List</router-link>
     </div>
     <transition name="slide-fade" mode="out-in">
       <router-view />
@@ -40,6 +40,19 @@
   opacity: 0;
   transform: translateX(10px);
 }
+
+.slide-up-enter {
+  opacity: 0;
+  transform: translateY(10px);
+}
+
+.slide-up-enter-active {
+  transition: all 0.2s ease;
+}
+
+.slide-up-move {
+  transition: transform 0.5s ease-out;
+}
 /* ------------TRANSITIONS END-------------- */
 
 #app {
@@ -50,9 +63,25 @@
   color: #2c3e50;
 }
 
-button {
-  width: 5em;
+input {
+  margin-top: 1em;
+  border-radius: 4px;
   height: 2em;
+}
+
+ul {
+  padding: 0;
+  margin-top: 5em;
+}
+
+li {
+  list-style: none;
+  font-size: 2em;
+}
+
+button {
+  padding: 6px 15px;
+  width: 5em;
   margin: 0.5em;
   border-radius: 5px;
   background: linear-gradient(to right, #16c0b0, #84cf6a);
@@ -61,6 +90,12 @@ button {
   border: none;
   outline: none;
   cursor: pointer;
+}
+
+.form {
+  margin-top: 3em;
+  display: flex;
+  justify-content: center;
 }
 
 #nav {
